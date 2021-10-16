@@ -1,0 +1,13 @@
+<form name="form" class="form">
+    <p class="bw">Bad words: <ng-container *ngFor="let word of newArr; let i=index">{{word + " " }}</ng-container>
+
+    <div class="wordInput" >
+    <input type="text" *ngIf="wrong" [(ngModel)]="words" class="words" name="newBadWords"  id="">
+    <input type="text" class="words-active" *ngIf="!wrong" [(ngModel)]="words" name="newBadWords" placeholder="Please write the word..."  id="">
+    <button type="button" class="add" (click)="addWords()">Add</button>
+    <button type="button" class="reset">Reset</button>
+</div>
+<textarea name="txt" id="" cols="60" rows="10" class="textarea" [(ngModel)]="txtArea" *ngIf="active" ></textarea>
+<textarea name="txt" id="" cols="60" rows="10" class="textarea" [(ngModel)]="txtArea" *ngIf="!active" class="wrongTxt" placeholder="Please write text"></textarea>
+<button type="button" class="cenzor" (click)="addStars()">Cenzor</button>
+</form>

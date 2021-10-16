@@ -1,0 +1,14 @@
+<div class="container">
+  <div>
+    <h2>Plan your day</h2>
+    <h4>User: Ivan Ivanov. Count of task {{ taskCount }}</h4>
+  </div>
+  <hr>
+  <div class="input">
+    <input class="form-control" type="text" [(ngModel)]="task" aria-label="default input example">
+    <button type="button" class="btn btn-success" (click)="addTask()" [disabled]="!task">Add</button>
+  </div>
+  <hr>
+  <app-child-tl [listOftask]="arrTask" (newTaskCount)="getNewCount($event)">
+  </app-child-tl>
+</div>
